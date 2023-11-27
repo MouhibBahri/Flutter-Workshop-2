@@ -1,11 +1,19 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:restaurant/Data/app_colors.dart';
 import 'package:restaurant/Data/profile_data.dart';
 import 'package:restaurant/Model/profile_model.dart';
 
-class ProfileWidget extends StatelessWidget {
-  ProfileWidget({super.key});
+class ProfileWidget extends StatefulWidget {
+  const ProfileWidget({super.key});
 
+  @override
+  State<ProfileWidget> createState() {
+    return _ProfileWidget();
+  }
+}
+
+class _ProfileWidget extends State<ProfileWidget> {
   final ProfileModel user = ProfileData().user;
 
   @override
@@ -105,51 +113,126 @@ class ProfileWidget extends StatelessWidget {
               color: AppColors.primary,
               thickness: 2,
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Text(
-                      'Wallet',
-                      style: TextStyle(color: AppColors.primary, fontSize: 16),
+            IntrinsicHeight(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Text(
+                          'Wallet',
+                          style:
+                              TextStyle(color: AppColors.primary, fontSize: 16),
+                        ),
+                        Text(
+                          '7',
+                          style: TextStyle(
+                              color: AppColors.third,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 28),
+                        ),
+                      ],
                     ),
-                    Text(
-                      '7',
-                      style: TextStyle(
-                          color: AppColors.third,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 28),
+                  ),
+                  VerticalDivider(
+                    color: AppColors.primary,
+                    thickness: 2,
+                    width: 20,
+                  ),
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Text(
+                          'Total expenses',
+                          style:
+                              TextStyle(color: AppColors.primary, fontSize: 16),
+                        ),
+                        Text(
+                          '26',
+                          style: TextStyle(
+                              color: AppColors.third,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 28),
+                        ),
+                      ],
                     ),
-                  ],
-                ),
-                VerticalDivider(
-                  color: AppColors.primary,
-                  thickness: 2,
-                  width: 20,
-                ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Text(
-                      'Total expenses',
-                      style: TextStyle(color: AppColors.primary, fontSize: 16),
-                    ),
-                    Text(
-                      '26',
-                      style: TextStyle(
-                          color: AppColors.third,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 28),
-                    ),
-                  ],
-                ),
-              ],
+                  ),
+                ],
+              ),
             ),
             Divider(
               color: AppColors.primary,
               thickness: 2,
+            ),
+            const SizedBox(height: 24),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 40),
+              child: ElevatedButton.icon(
+                onPressed: () {},
+                icon: const FittedBox(
+                  fit: BoxFit.cover,
+                  child: Icon(
+                    Icons.update,
+                    size: 36,
+                  ),
+                ),
+                style: ElevatedButton.styleFrom(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(16),
+                  ),
+                  backgroundColor: Colors.white,
+                  //elevation: 6,
+                ),
+                label: Container(
+                  alignment: Alignment.centerLeft,
+                  width: double.infinity,
+                  height: 70,
+                  child: Text(
+                    'History',
+                    style: TextStyle(
+                        fontSize: 32,
+                        color: AppColors.primary,
+                        fontWeight: FontWeight.normal),
+                  ),
+                ),
+              ),
+            ),
+            const SizedBox(height: 24),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 40),
+              child: ElevatedButton.icon(
+                onPressed: () {},
+                icon: const FittedBox(
+                  fit: BoxFit.cover,
+                  child: Icon(
+                    CupertinoIcons.moon,
+                    size: 36,
+                  ),
+                ),
+                style: ElevatedButton.styleFrom(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(16),
+                  ),
+                  backgroundColor: Colors.white,
+                  //elevation: 6,
+                ),
+                label: Container(
+                  alignment: Alignment.centerLeft,
+                  width: double.infinity,
+                  height: 70,
+                  child: Text(
+                    'Dark mode',
+                    style: TextStyle(
+                        fontSize: 32,
+                        color: AppColors.primary,
+                        fontWeight: FontWeight.normal),
+                  ),
+                ),
+              ),
             ),
           ],
         ),
