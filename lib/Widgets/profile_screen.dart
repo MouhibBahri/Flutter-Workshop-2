@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:restaurant/Data/app_colors.dart';
+import 'package:restaurant/Widgets/ProfileWidgets/history_widget.dart';
 import 'package:restaurant/Widgets/ProfileWidgets/profile_widget.dart';
 
 class ProfileScreen extends StatefulWidget {
@@ -10,6 +11,14 @@ class ProfileScreen extends StatefulWidget {
 }
 
 class _ProfileScreen extends State<StatefulWidget> {
+  var currentScreen = 'ProfileScreen';
+
+  void changePage(String screen) {
+    setState(() {
+      currentScreen = screen;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,15 +32,33 @@ class _ProfileScreen extends State<StatefulWidget> {
             icon: Icon(
               Icons.exit_to_app_sharp,
               color: AppColors.third,
+              size: 36,
             ),
           ),
         ],
+        title: currentScreen == 'ProfileScreen'
+            ? const Text('')
+            : Text(
+                'History',
+                style: TextStyle(
+                    color: AppColors.secondary,
+                    fontSize: 24,
+                    fontWeight: FontWeight.w400),
+              ),
+        centerTitle: true,
         leading: BackButton(
-          onPressed: () {},
+          onPressed: () {
+            changePage('ProfileScreen');
+          },
           color: AppColors.secondary,
+          style: ButtonStyle(
+            iconSize: MaterialStateProperty.all(36),
+          ),
         ),
       ),
-      body: ProfileWidget(),
+      body: currentScreen == 'ProfileScreen'
+          ? ProfileWidget(changePage)
+          : HistoryWidget(),
     );
   }
 }

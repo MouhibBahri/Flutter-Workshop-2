@@ -5,8 +5,9 @@ import 'package:restaurant/Data/profile_data.dart';
 import 'package:restaurant/Model/profile_model.dart';
 
 class ProfileWidget extends StatefulWidget {
-  const ProfileWidget({super.key});
+  const ProfileWidget(this.toHistory, {super.key});
 
+  final void Function(String) toHistory;
   @override
   State<ProfileWidget> createState() {
     return _ProfileWidget();
@@ -15,11 +16,12 @@ class ProfileWidget extends StatefulWidget {
 
 class _ProfileWidget extends State<ProfileWidget> {
   final ProfileModel user = ProfileData().user;
+  bool darkMode = false;
 
   @override
   Widget build(context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 8),
+      padding: const EdgeInsets.fromLTRB(24, 48, 24, 8),
       child: Center(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -27,8 +29,8 @@ class _ProfileWidget extends State<ProfileWidget> {
           children: [
             Container(
               padding: const EdgeInsets.all(24),
-              width: 120,
-              height: 120,
+              width: 140,
+              height: 140,
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
                 color: AppColors.secondary,
@@ -41,7 +43,7 @@ class _ProfileWidget extends State<ProfileWidget> {
                 ),
               ),
             ),
-            const SizedBox(height: 24),
+            const SizedBox(height: 22),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -108,7 +110,7 @@ class _ProfileWidget extends State<ProfileWidget> {
                 ),
               ],
             ),
-            const SizedBox(height: 24),
+            const SizedBox(height: 52),
             Divider(
               color: AppColors.primary,
               thickness: 2,
@@ -125,14 +127,14 @@ class _ProfileWidget extends State<ProfileWidget> {
                         Text(
                           'Wallet',
                           style:
-                              TextStyle(color: AppColors.primary, fontSize: 16),
+                              TextStyle(color: AppColors.primary, fontSize: 18),
                         ),
                         Text(
                           '7',
                           style: TextStyle(
                               color: AppColors.third,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 28),
+                              fontWeight: FontWeight.w900,
+                              fontSize: 42),
                         ),
                       ],
                     ),
@@ -149,14 +151,14 @@ class _ProfileWidget extends State<ProfileWidget> {
                         Text(
                           'Total expenses',
                           style:
-                              TextStyle(color: AppColors.primary, fontSize: 16),
+                              TextStyle(color: AppColors.primary, fontSize: 18),
                         ),
                         Text(
                           '26',
                           style: TextStyle(
                               color: AppColors.third,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 28),
+                              fontWeight: FontWeight.w900,
+                              fontSize: 42),
                         ),
                       ],
                     ),
@@ -168,11 +170,13 @@ class _ProfileWidget extends State<ProfileWidget> {
               color: AppColors.primary,
               thickness: 2,
             ),
-            const SizedBox(height: 24),
+            const SizedBox(height: 52),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 40),
               child: ElevatedButton.icon(
-                onPressed: () {},
+                onPressed: () {
+                  widget.toHistory('History');
+                },
                 icon: const FittedBox(
                   fit: BoxFit.cover,
                   child: Icon(
@@ -182,26 +186,26 @@ class _ProfileWidget extends State<ProfileWidget> {
                 ),
                 style: ElevatedButton.styleFrom(
                   shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(16),
+                    borderRadius: BorderRadius.circular(20),
                   ),
-                  backgroundColor: Colors.white,
-                  //elevation: 6,
+                  surfaceTintColor: Colors.white,
+                  elevation: 6,
                 ),
                 label: Container(
                   alignment: Alignment.centerLeft,
                   width: double.infinity,
-                  height: 70,
+                  height: 60,
                   child: Text(
                     'History',
                     style: TextStyle(
-                        fontSize: 32,
+                        fontSize: 28,
                         color: AppColors.primary,
                         fontWeight: FontWeight.normal),
                   ),
                 ),
               ),
             ),
-            const SizedBox(height: 24),
+            const SizedBox(height: 28),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 40),
               child: ElevatedButton.icon(
@@ -215,24 +219,48 @@ class _ProfileWidget extends State<ProfileWidget> {
                 ),
                 style: ElevatedButton.styleFrom(
                   shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(16),
+                    borderRadius: BorderRadius.circular(20),
                   ),
-                  backgroundColor: Colors.white,
-                  //elevation: 6,
+                  surfaceTintColor: Colors.white,
+                  elevation: 6,
                 ),
                 label: Container(
                   alignment: Alignment.centerLeft,
                   width: double.infinity,
-                  height: 70,
-                  child: Text(
-                    'Dark mode',
-                    style: TextStyle(
-                        fontSize: 32,
-                        color: AppColors.primary,
-                        fontWeight: FontWeight.normal),
+                  height: 60,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        'Dark mode',
+                        style: TextStyle(
+                            fontSize: 28,
+                            color: AppColors.primary,
+                            fontWeight: FontWeight.normal),
+                      ),
+                      const Spacer(),
+                      Switch(
+                        value: darkMode,
+                        onChanged: (value) {
+                          setState(() {
+                            darkMode = value;
+                          });
+                        },
+                        inactiveTrackColor: Colors.grey[200],
+                        inactiveThumbColor: AppColors.secondary,
+                      )
+                    ],
                   ),
                 ),
               ),
+            ),
+            const SizedBox(height: 48),
+            Text(
+              'Made with ❤️',
+              style: TextStyle(
+                  fontSize: 18,
+                  color: AppColors.primary,
+                  fontWeight: FontWeight.w700),
             ),
           ],
         ),
