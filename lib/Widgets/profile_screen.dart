@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:restaurant/Data/app_colors.dart';
-import 'package:restaurant/Widgets/ProfileWidgets/history_widget.dart';
-import 'package:restaurant/Widgets/ProfileWidgets/profile_widget.dart';
+import 'package:Flutter_Workshop_2/Data/app_colors.dart';
+import 'package:Flutter_Workshop_2/Widgets/ProfileWidgets/history_widget.dart';
+import 'package:Flutter_Workshop_2/Widgets/ProfileWidgets/profile_widget.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});

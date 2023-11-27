@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:Flutter-Workshop-2/Widgets/bottom_navigationbar.dart';
-import 'package:Flutter-Workshop-2/Model/menu.dart';
-import 'package:Flutter-Workshop-2/Widgets/CalendarScreenWidgets/menus_list.dart';
+import 'package:Flutter_Workshop_2/Widgets/bottom_navigationbar.dart';
+import 'package:Flutter_Workshop_2/Model/menu.dart';
+import 'package:Flutter_Workshop_2/Widgets/CalendarScreenWidgets/menus_list.dart';
 
 class Calendar_screen extends StatefulWidget {
   const Calendar_screen({super.key});

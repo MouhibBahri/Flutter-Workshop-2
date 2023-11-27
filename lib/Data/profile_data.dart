@@ -1,4 +1,4 @@
-import 'package:restaurant/Model/profile_model.dart';
+import 'package:Flutter_Workshop_2/Model/profile_model.dart';
 
 class ProfileData {
   ProfileModel user = ProfileModel(

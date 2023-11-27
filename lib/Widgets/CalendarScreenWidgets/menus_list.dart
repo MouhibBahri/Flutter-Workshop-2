@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:restaurant_app/Model/menu.dart';
+import 'package:Flutter_Workshop_2/Model/menu.dart';
 
 class MenusList extends StatelessWidget {
   const MenusList({super.key, required this.menu});

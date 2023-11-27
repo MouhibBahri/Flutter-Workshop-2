@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:restaurant/Data/history_data.dart';
-import 'package:restaurant/Widgets/ProfileWidgets/HistoryWidgets/history_item.dart';
+import 'package:Flutter_Workshop_2/Data/history_data.dart';
+import 'package:Flutter_Workshop_2/Widgets/ProfileWidgets/HistoryWidgets/history_item.dart';
 
 class HistoryWidget extends StatelessWidget {
   HistoryWidget({super.key});

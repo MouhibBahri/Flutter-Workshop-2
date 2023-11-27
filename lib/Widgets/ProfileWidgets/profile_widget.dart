@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:restaurant/Data/app_colors.dart';
-import 'package:restaurant/Data/profile_data.dart';
-import 'package:restaurant/Model/profile_model.dart';
+import 'package:Flutter_Workshop_2/Data/app_colors.dart';
+import 'package:Flutter_Workshop_2/Data/profile_data.dart';
+import 'package:Flutter_Workshop_2/Model/profile_model.dart';
 
 class ProfileWidget extends StatefulWidget {
   const ProfileWidget(this.toHistory, {super.key});

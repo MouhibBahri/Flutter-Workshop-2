@@ -1,4 +1,4 @@
-import 'package:restaurant/Model/history_model.dart';
+import 'package:Flutter_Workshop_2/Model/history_model.dart';
 
 class HistoryData {
   var list = [

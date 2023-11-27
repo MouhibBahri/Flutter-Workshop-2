@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:restaurant/Data/app_colors.dart';
+import 'package:Flutter_Workshop_2/Data/app_colors.dart';
 
-import 'package:restaurant/Model/history_model.dart';
+import 'package:Flutter_Workshop_2/Model/history_model.dart';
 
 class HistoryItem extends StatelessWidget {
   HistoryItem(this.model, {super.key});
@@ -54,7 +54,7 @@ class HistoryItem extends StatelessWidget {
             ],
           ),
           const SizedBox(height: 7),
-          Divider(
+          const Divider(
             thickness: 0.5,
             height: 1,
           ),
