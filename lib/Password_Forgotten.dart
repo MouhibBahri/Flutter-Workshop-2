@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:workshop2/Bouton.dart';
-import 'package:workshop2/CodeSent.dart';
-import 'package:workshop2/template.dart';
+import 'package:Flutter_Workshop_2/Bouton.dart';
+import 'package:Flutter_Workshop_2/CodeSent.dart';
+import 'package:Flutter_Workshop_2/template.dart';
 import 'Widget_Login.dart';
 
 class PasswordForgotten extends StatefulWidget {

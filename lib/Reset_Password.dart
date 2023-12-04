@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:workshop2/Bouton.dart';
-import 'package:workshop2/Widget_Login.dart';
-import 'package:workshop2/template.dart';
+import 'package:Flutter_Workshop_2/Bouton.dart';
+import 'package:Flutter_Workshop_2/Widget_Login.dart';
+import 'package:Flutter_Workshop_2/template.dart';
 
 class ResetPassword extends StatelessWidget {
   const ResetPassword({super.key});

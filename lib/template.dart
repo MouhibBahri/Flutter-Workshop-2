@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:workshop2/texte.dart';
+import 'package:Flutter_Workshop_2/texte.dart';
 
 class Template extends StatelessWidget {
   const Template(
