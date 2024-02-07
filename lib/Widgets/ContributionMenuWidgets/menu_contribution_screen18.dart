@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:restaurant_app/bottom_navigationbar.dart';
-import 'package:restaurant_app/contribution_menu/bottons_row.dart';
-import 'package:restaurant_app/models/menu.dart';
+import 'package:Flutter-Workshop-2/Widgets/bottom_navigationbar.dart';
+import 'package:Flutter-Workshop-2/ContributionMenuWidgets/bottons_row.dart';
+import 'package:Flutter-Workshop-2/Model/menu.dart';
 
 class MenuContributionScreen extends StatefulWidget {
   const MenuContributionScreen({super.key});
